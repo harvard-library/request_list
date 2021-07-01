@@ -1,0 +1,30 @@
+<% item.form_fields.each {|r| r.each {|name, value| %>
+
+  <input type="hidden" name="<%= name %>" value="<%= value %>">
+
+<% }} %>
+
+<div class="rl-ha-excluded-request-types" style="display:none">
+  <% item.ext(:excluded_request_types).multi.map do |t| %>
+    <data value="<%= t.name %>"></data>
+  <% end %>
+</div>
+
+<div>
+
+<table class="table table-striped rl-ha-item-form-table">
+<% item.form_fields.each {|r| %>
+  <tr style="height: 30px;">
+  </tr>
+
+  <% r.each {|name, value| %>
+    <% next if name == 'Request' %>
+    <tr>
+      <td><%= name.gsub(/_.+$/, '') %></td>
+      <td><%= value.html_safe %></td>
+    </tr>
+  <% } %>
+<% } %>
+</table>
+
+</div>
