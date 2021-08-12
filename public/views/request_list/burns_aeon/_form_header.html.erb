@@ -19,29 +19,14 @@
 </a>
 
 
-<div class="rl-message rl-message-title">
-
-  <div class="rl-ha-collapsed-help">
+<div class="row">
+<div class="col-sm-10" no-pad"="">
+  <p class="serif">
     <%= t('plugin.request_list.title_message').html_safe %>
-  </div>
-
-  <h7><b class='serif'><%= t('plugin.request_list.expanded_help_title').html_safe %></b></h7>
-  <div class="rl-ha-expanded-help" style="display:none">
-    <ul style='padding-right: 20px'>
-    </ul>
+</p>
   </div>
 </div>
-
-<a class="rl-ha-expand-help"
-   title="<%= t('plugin.request_list.expand_help_message') %>"
-   data-expand-label="<%= t('plugin.request_list.expand_help_label') %>"
-   data-collapse-label="<%= t('plugin.request_list.collapse_help_label') %>"
-   href="javascript:void(0);">
-
-  <%= t('plugin.request_list.expand_help_label') %>
-</a>
-
-
+<div class="row"><hr></div>
 <div class="row">
   <div class="col-sm-10 no-pad">
     <div class="rl-request-form-header">
@@ -104,21 +89,6 @@
         </select>
       </div>
 
-      <div class="form-group col-sm-3">
-        <label class="control-label" title="Required"><%= t('plugin.request_list.options.delivery') %> *</label>
-        <select name="ShippingOption" class="form-control rl-ha-list-input required">
-          <option value="">...</option>
-          <% handler.list_opts[:delivery_options].each do |option| %>
-            <option value="<%= option %>"><%= option %></option>
-          <% end %>
-        </select>
-      </div>
-
-      <div class="form-group col-sm-2" style="padding-top: 20px">
-        <label class="control-label" style="display:inline"><%= t('plugin.request_list.options.for_publication') %></label>
-        &nbsp;
-        <input type="checkbox" name="ForPublication" class="rl-ha-list-input" style="display:inline" value="Yes"/>
-      </div>
     </div>
   </div>
 </div>
@@ -127,16 +97,6 @@
 
 <div class="row">
 
-  <div class="form-group rl-ha-notes-and-questions col-sm-5">
-    <div class="form-group">
-      <label class="control-label"><%= t('plugin.request_list.options.notes') %></label>
-      <textarea name="Notes"
-                rows="3"
-                class="form-control rl-ha-list-input"
-                title="<%= t('plugin.request_list.options.notes_help') %>"
-                maxlength="65536"></textarea>
-    </div>
-  </div>
 
   <div class="form-group rl-ha-notes-and-questions col-sm-5">
     <div class="form-group">
@@ -155,14 +115,4 @@
     </div>
   </div>
 </div>
-
-<div class="row">
-  <div class="col-sm-8"></div>
-  <div class="col-sm-2">
-    <div class="pull-right" style="padding-top:20px">
-      <button type="submit" class="btn btn-primary submit-requests"><%= t('plugin.request_list.submit_button_label') %></button>
-    </div>
-  </div>
-</div>
-
 

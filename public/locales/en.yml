@@ -2,18 +2,18 @@ en:
   plugin:
     request_list:
       list_title: My Request List
-      item_list_subtitle: ITEM LIST
-      request_form_subtitle: REQUEST FORM
+      item_list_subtitle: 2) Review requests and Submit
+      request_form_subtitle: 1) Choose request type
       title_message: |
-          You can select items in this list to submit requests for retrieval or photoduplication.<br/>
-          NOTE: Items will remain in your list for this browser session. Submitted items will be removed.
+          Review your requests below and either schedule a visit date to see them in the Burns Library Reading Room or submit a copy request for Burns staff to send you reference scans of selected materials.<br/><br/>
+          Requests that you've already submitted (either for a visit or to receive scans) can be viewed by logging into your <a href="https://burnsaccount.bc.edu" target="_blank" rel="noopener noreferrer">Burns Library Account</a>.
       list_session_message: Items will remain in your list for this browser session.<br/>Your list will be cleared when you send requests.
       full_list_error_message: Your list is full. Please go to 'My Request List' and remove items or submit your requests to make room for more.
       unfilled_fields_error_message: "Please provide the following:"
       empty_list_error_message: Please check the items you would like to request.
       excluded_items_message: The %{repo} does not accept %{request_type} requests.  The following items from your list cannot be submitted. Please contact %{repo} directly.
       submit_button_label: Submit Requests
-      aeon_button_label: '>> View requests'
+      aeon_button_label: '>> View submitted requests'
       back_to_top_button_label: Back to top
       remove_all_button_label: Remove All
       remove_all_confirm_message: Are you sure you want to remove all the items from your list? You will not be able to undo this action.
@@ -47,7 +47,9 @@ en:
       add_to_list_button_icon: fa-plus
       remove_from_list_button_label: Remove from My Request List
       remove_from_list_button_icon: fa-times
-      empty_list_message: There are no items in your list. Please use the 'Add to My Request List' button when viewing items you wish to request and then return here to send the requests.
+      empty_list_message: |
+          There are no items in your list. To add items to your request list, use the "Add to My Request List" button for any file you would like to request. Can't find what you are looking for? Contact <a href="https://libguides.bc.edu/burns/contact" target="_blank" rel="noopener noreferrer">Burns Public Services</a> for searching and reference assistance.<br/></br>
+          To see the requests that you have already submitted to Burns staff, log into your <a href="https://burnsaccount.bc.edu" target="_blank" rel="noopener noreferrer">Burns Library Account</a>.
       unhandled_items_title: Unhandled Items
       unhandled_items_message: The following items could not be requested. Please contact the Archives for assistance.
       sent_items_message: You sent requests for %{sent} items.
@@ -65,19 +67,19 @@ en:
         header: ArchivesSpace Request List Items
       options:
         request_type: Request Type
-        date: Schedule Retrieval
+        date: Schedule visit date
         date_help: Click to bring up a calendar and indicate the date you plan to visit. If material is stored off-site please allow at least 1 business day for retrieval.
         notes: Notes
         notes_help: Enter any notes about this request for your personal reference.
         questions: Special Requests/Questions?
-        questions_help: Please enter any special requests or questions for library staff (up to 255 characters).
+        questions_help: Please enter any questions or requests for library staff, including questions about accessibility accommodations.
         format: Desired Format
         delivery: Shipping Preference
         for_publication: For Publication?
         for_publication_yes: Yes, intended for publication
         for_publication_no: No, not intended for publication
-        photoduplication_instructions: Photoduplication Instructions
-        photoduplication_instructions_help: Let us know exactly what you would like reproduced. Specific page numbers, special instructions, and questions should all be entered here (up to 255 characters).
+        photoduplication_instructions: Describe Copy Request
+        photoduplication_instructions_help: This field is limited to 255 characters.
       expanded_help: |
         <p>
           Fill out the request form, select the items you want to include in the request, and then click Submit Requests.

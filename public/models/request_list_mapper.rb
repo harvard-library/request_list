@@ -18,7 +18,6 @@ class RequestListMapper
     {
       'record'     => proc {|mapped| mapped.record.name},
       'collection' => proc {|mapped| mapped.collection.name},
-      'repository' => proc {|mapped| mapped.repository.name},
     }
   end
 end

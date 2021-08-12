@@ -49,7 +49,13 @@ class RequestList
 
 
   def self.repo_config_for(record)
-    @@repositories[:default].merge(@@repositories[record.resolved_repository['repo_code'].downcase] || {})
+    #repo_code = record.resolved_repository['repo_code'].downcase
+    # use safe operation navigator to fetch the 'repo_code' attribute
+    repo_code = record&.resolved_repository&.dig('repo_code')
+    return false if repo_code.nil?
+    @@repositories[:default].merge(
+	@@repositories[repo_code.downcase] || {}
+    )
   end
 
 
@@ -64,7 +70,7 @@ class RequestList
 
   def self.handler_config_for(record)
     cfg = repo_config_for(record)
-    return false unless cfg[:handler]
+    return false unless cfg && cfg[:handler]
     return false unless @@request_handlers[cfg[:handler]]
     @@request_handlers[cfg[:handler]]
   end
