@@ -17,9 +17,7 @@ module BurnsAeon
         'ItemAuthor'     => mapped.creator.name,
         'ItemDate'       => mapped.date.name,
         'Location'       => mapped.ext(:location).name,
-        'SubLocation'    => mapped.ext(:physical_location).name,
         'CallNumber'     => mapped.collection.id,
-        'ItemInfo2'      => mapped.collection.ext(:access_restrictions),
       }, mapped.container.multi.first))]
     end
 

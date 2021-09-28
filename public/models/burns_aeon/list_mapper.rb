@@ -6,10 +6,10 @@ module BurnsAeon
     def form_fields
       {
         'SystemId'              => 'ArchivesSpace',
-        'ReturnLinkURL'         => AppConfig[:public_proxy_url] + '/plugin/request_list',
+        'ReturnLinkURL'         => AppConfig[:public_proxy_url] + '/plugin/request_list/list',
         'ReturnLinkSystemName'  => @opts[:return_link_label],
-        'AeonForm'              => 'EADRequest',
-        'WebRequestForm'        => 'DefaultRequest',
+        'AeonForm'              => 'ExternalRequest',
+        'WebRequestForm'        => 'GenericRequestManuscript',
         'DocumentType'          => 'Default',
         'RequestType'           => 'Loan',
         'UserReview'            => 'No',

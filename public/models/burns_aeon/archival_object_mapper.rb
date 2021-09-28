@@ -19,12 +19,10 @@ module BurnsAeon
         'ItemAuthor'     => mapped.creator.name,
         'ItemDate'       => mapped.date.name,
         'Location'       => mapped.ext(:location).name,
-        'SubLocation'    => mapped.ext(:physical_location).name,
         'ItemInfo3'      => mapped.extent.multi.map {|e| [e.name, e.ext(:container_summary), e.ext(:physical_details)].select {|e| !e.blank?}.join(", ")}.join('; '),
         'CallNumber'     => mapped.collection.id,
         'ItemPlace'      => mapped.record.ext(:access_restrictions),
-        'ItemInfo2'      => mapped.collection.ext(:access_restrictions),
-        'ItemIssue'      => mapped.record.id,
+        'ItemInfo2'      => mapped.record.id,
       }
 
       return [as_aeon_request(shared_fields)] unless mapped.container.has_multi?
