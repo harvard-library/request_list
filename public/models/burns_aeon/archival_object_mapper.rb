@@ -17,11 +17,10 @@ module BurnsAeon
         'ItemSubTitle'   => mapped.ext(:level).name + ': ' + ((mapped.ext(:level).name == 'Series' || mapped.ext(:level).name == 'Subseries') && !mapped.record.id.empty? ? mapped.record.id + ' ' : '') + mapped.record.name,
         'ItemCitation'   => mapped.collection.multi.drop(1).map {|c| "#{c.ext(:level)}: #{c.name} (#{c.id})"}.join('; '),
         'ItemAuthor'     => mapped.creator.name,
-        'ItemDate'       => mapped.date.name,
         'Location'       => mapped.ext(:location).name,
-        'ItemInfo3'      => mapped.extent.multi.map {|e| [e.name, e.ext(:container_summary), e.ext(:physical_details)].select {|e| !e.blank?}.join(", ")}.join('; '),
+        'ItemInfo3'      => mapped.extent.ext(:container_summary, mapped.extent.multi.map {|e| e.ext(:container_summary)}.compact.join('; ')),
         'CallNumber'     => mapped.collection.id,
-        'ItemPlace'      => mapped.record.ext(:access_restrictions),
+        'ItemInfo5'      => mapped.collection.ext(:access_restrictions) + ': ' + mapped.record.ext(:access_restrictions),
         'ItemInfo2'      => mapped.record.id,
       }
 

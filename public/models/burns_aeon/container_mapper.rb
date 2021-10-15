@@ -15,7 +15,6 @@ module BurnsAeon
         'ReferenceNumber' => mapped.ext(:hollis).id,
         'ItemTitle'      => mapped.collection.name,
         'ItemAuthor'     => mapped.creator.name,
-        'ItemDate'       => mapped.date.name,
         'Location'       => mapped.ext(:location).name,
         'CallNumber'     => mapped.collection.id,
       }, mapped.container.multi.first))]
