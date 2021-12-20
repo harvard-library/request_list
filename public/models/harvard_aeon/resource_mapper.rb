@@ -15,11 +15,9 @@ module HarvardAeon
         'ReferenceNumber' => mapped.ext(:hollis).id,
         'ItemTitle'     => mapped.collection.name,
         'ItemAuthor'    => mapped.creator.name,
-        'ItemDate'      => mapped.date.name,
         'Location'      => mapped.ext(:location).name,
-        'SubLocation'   => mapped.ext(:physical_location).name,
         'CallNumber'    => mapped.collection.id,
-        'ItemInfo2'     => mapped.collection.ext(:access_restrictions),
+        'ItemCitation'   => mapped.collection.ext(:access_restrictions),
       }
 
       return [as_aeon_request(shared_fields)] unless mapped.container.has_multi?

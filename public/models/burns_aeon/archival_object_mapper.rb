@@ -15,12 +15,12 @@ module BurnsAeon
         'ReferenceNumber' => mapped.ext(:hollis).id,
         'ItemTitle'      => mapped.collection.name,
         'ItemSubTitle'   => mapped.ext(:level).name + ': ' + ((mapped.ext(:level).name == 'Series' || mapped.ext(:level).name == 'Subseries') && !mapped.record.id.empty? ? mapped.record.id + ' ' : '') + mapped.record.name,
-        'ItemCitation'   => mapped.collection.multi.drop(1).map {|c| "#{c.ext(:level)}: #{c.name} (#{c.id})"}.join('; '),
+        'ItemCitation'   => mapped.collection.ext(:access_restrictions),
         'ItemAuthor'     => mapped.creator.name,
         'Location'       => mapped.ext(:location).name,
-        'ItemInfo3'      => mapped.extent.ext(:container_summary, mapped.extent.multi.map {|e| e.ext(:container_summary)}.compact.join('; ')),
+        'ItemInfo3'      => mapped.ext(:container_profile).name,
         'CallNumber'     => mapped.collection.id,
-        'ItemInfo5'      => mapped.collection.ext(:access_restrictions) + ': ' + mapped.record.ext(:access_restrictions),
+        'ItemInfo5'      => mapped.record.ext(:access_restrictions),
         'ItemInfo2'      => mapped.record.id,
       }
 

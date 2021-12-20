@@ -88,9 +88,9 @@ module HarvardAeon
       item_fields.merge({
         'gid'         => mapped.collection.uri + container.uri,
         'ItemVolume'  => container.name.sub(/: .*$/, ''),
-        'ItemNumber'  => container.id,
-        'ItemIssue'   => [mapped.record.id, container.ext(:subs)].compact.select{|i| !i.empty?}.join(': '),
-        'ItemInfo5'   => container.ext(:location)
+        'ItemInfo1'  => container.id,
+        'ItemInfo2'   => [mapped.record.id, container.ext(:subs)].compact.select{|i| !i.empty?}.join(': '),
+        'SubLocation'   => container.ext(:location)
       })
     end
   end

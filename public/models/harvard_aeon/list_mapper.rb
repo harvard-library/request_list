@@ -10,7 +10,7 @@ module HarvardAeon
         'ReturnLinkSystemName'  => @opts[:return_link_label],
         'AeonForm'              => 'EADRequest',
         'WebRequestForm'        => 'DefaultRequest',
-        'DocumentType'          => 'Default',
+        'DocumentType'          => 'Manuscript',
         'RequestType'           => 'Loan',
         'UserReview'            => 'No',
         'SkipOrderEstimate'     => '',
